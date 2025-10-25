@@ -36,6 +36,10 @@ func TestConcurrency2(t *testing.T) {
 			<-over
 		}
 	}
-	close(final)
 	wg.Wait()
+	close(final)
+	for i := range channels {
+		close(channels[i])
+	}
+	close(over)
 }
