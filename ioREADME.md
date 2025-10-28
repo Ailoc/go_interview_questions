@@ -17,9 +17,9 @@ const (
 )
 ```
 ### 方法
-- os.ReadFile
-- os.WriteFile
-- io.ReadAll
+- os.ReadFile(name string) ([]byte, error)
+- os.WriteFile(name string, data []byte, perm fs.FileMode)
+- io.ReadAll(r io.Reader) ([]byte, error)  -> ReadAll(file) 
 - ...
 
 ## 文件操作API
