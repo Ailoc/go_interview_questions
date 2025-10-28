@@ -24,7 +24,7 @@ func TestSeeker(t *testing.T) {
 	// 读取指定位置的数据
 	file.Seek(0, 0) // 从文件开头开始偏移0个字节，即定位到文件开头
 	buf := make([]byte, 64)
-	n, err = file.Read(buf)
+	n, err = file.Read(buf) // 实际读取了一部分数据
 	if err != nil {
 		t.Errorf("读取文件出错: %v", err)
 	}
