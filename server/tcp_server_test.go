@@ -30,7 +30,7 @@ func TestTCPServer(t *testing.T) {
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
 	for {
-		reader := bufio.NewReader(conn)
+		reader := bufio.NewReader(conn) // conn实现了io.Reader接口和io.Writer接口
 		var buf [1024]byte
 		n, err := reader.Read(buf[:])
 		if err != nil {
