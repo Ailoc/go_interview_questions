@@ -25,3 +25,14 @@ TCP协议是面向连接的，可靠的，基于字节流的协议。
             writer.Flush()
 ## UDP
 UDP是一种无连接的协议，就是说在传输数据之前不需要建立连接
+
+服务端代码编写：
+- 监听端口：
+
+        conn, err := net.ListenUDP()
+- 接收数据：
+
+        n, ip, err := conn.ReadFromUDP([]byte)
+- 发送数据：
+
+        _, err := conn.WriteToUDP([]byte, ip)

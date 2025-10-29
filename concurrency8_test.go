@@ -9,7 +9,8 @@ import (
 )
 
 // 实现一个生产者消费者系统，三个生产者随机向channel发送整数，
-// 两个消费者从channel中取出整数并打印总和，缓冲channel大小为5，生产总共10个数字
+// 两个消费者从channel中取出整数并打印总和，缓冲channel大小为5，生产1微秒，
+// 如果是生产指定数量的数字，则需要外部控制，因为消费者在持续消费
 func TestConcurrency(t *testing.T) {
 	storageNum := make(chan int, 10)
 	var mu sync.Mutex
