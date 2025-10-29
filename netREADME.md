@@ -36,3 +36,15 @@ UDP是一种无连接的协议，就是说在传输数据之前不需要建立�
 - 发送数据：
 
         _, err := conn.WriteToUDP([]byte, ip)
+
+客户端代码编写：
+- 建立连接
+
+        conn, err := net.DialUDP("udp", UDPAddr, UDPAddr)
+
+- 发送数据
+
+        n, err := conn.Write([]byte)
+- 接收数据
+
+        n, err := conn.Read([]byte)
